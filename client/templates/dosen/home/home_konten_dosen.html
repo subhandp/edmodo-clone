@@ -1,0 +1,65 @@
+<template name="home_konten_dosen">
+
+	    <div class="eight wide column">
+
+			{{> posting}}
+
+			{{#if postExist posts newPost}}
+				<div class="ui top attached segment" style="border-bottom:none!important;">
+					<h3 class="item header float-left">Post Terakhir</h3>
+
+						<div class="ui buttons float-right">
+
+						  <div class="ui floating dropdown icon button umum-dropdown" >
+						   <span>Filter posts by</span>
+						    <i class="angle down icon"></i>
+						    <input type="hidden" name="filter-posts">
+						    <div class="ui menu menu-filter">
+							    <div class="header">Author</div>
+							      <div class="item " data-value="byme"><i class="user icon"></i> <a href="#">By Me</a></div>
+							      <div class="item " data-value="bystudent"><i class="users icon"></i> <a href="#">By Student</a></div>
+						        <div class="header">Type</div>
+							      <div class="item " data-value="latest"><i class="edit icon"></i> <a href="#">Latest Post</a></div>
+							      <div class="item " data-value="assigment"><i class="check circle outline icon"></i> <a href="#">Assigment</a></div>
+							      <div class="item " data-value="note"><i class="help circle icon"></i> <a href="#">Note</a></div>
+							      <div class="item " data-value="poll"><i class="signal icon"></i> <a href="#">Poll</a></div>
+						    </div>
+						  </div>
+
+						</div>
+						<div class="clear"></div>
+					</div>
+			{{/if}}
+
+
+					<div class="ui bottom attached ">
+
+						{{#if newPost}}
+								{{#each newPost}}
+									{{> post}}
+								{{/each}}	
+						{{/if}}
+
+						{{#if posts}}
+								{{#each posts}}
+									{{> post}}
+								{{/each}}	
+
+								{{#if nextPath}}
+							      {{> load_more}}
+							    {{else}}
+							      {{#unless ready}}
+							        {{> spinner}}
+							      {{/unless}}
+							    {{/if}}
+							
+						{{/if}}
+				</div>
+		  
+	    </div>
+
+</template>
+
+<!-- <h3 class="ui top attached header">
+  Top Attached
+</h3> -->

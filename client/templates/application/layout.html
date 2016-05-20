@@ -1,0 +1,18 @@
+<template name="layout">
+		
+	{{> header}}
+	
+	<div class="ui main container">
+		<div class="ui grid">
+
+			{{> yield "leftSide"}}
+
+			{{> yield}}
+
+			{{> yield "rightSide"}}
+
+		</div>
+	</div>
+
+
+</template>

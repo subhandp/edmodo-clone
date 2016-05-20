@@ -1,0 +1,20 @@
+  body {
+    background-image: url("/images/teal.png");
+  }
+
+  .form-holder {
+    background: rgba(000,000,000,0.4);
+    margin-top: 10%;
+    border-radius: 3px;
+  }
+
+  .form-head {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 15px auto 30px auto;
+  }
+
+  .remember-me {
+    text-align: left;
+  }

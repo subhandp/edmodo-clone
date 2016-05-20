@@ -1,0 +1,304 @@
+<template name="assig_konten_dosen">
+	    <div class="ten wide column">
+	    	<div class="ui segments">
+	    		<div class="ui segment">
+	    			<h3>Judul Assigment</h3>
+	    			<span class="icon-gray">
+	    				<strong>Due: </strong>Jan 23, 2016
+	    			</span>
+	    		</div>
+	    		<div class="segment">
+	    			
+					<div class="ui top attached tabular menu assigment" >
+					  <a class="item active" data-tab="gradding" >Gradding Overview</a>
+					  <a class="item" data-tab="assigment" >Assigment Detail</a>
+					</div>
+
+					<div class="ui bottom attached tab segment active" data-tab="gradding">
+
+						<div class="float-left" style="margin-top:10px;margin-bottom:15px;">
+							<div class="ui form">
+							  <div class="fields">
+							    <div class="field">
+							      <input type="number" min="1" max="100" style="width:70px;">
+							    </div>
+							    <span > / </span>
+							    <div class="field">
+							      <input type="number" min="1" max="100" style="width:70px;">
+							    </div>
+							  </div>
+							  <div class="field"><button type="button" class="ui teal button">Grade 2 submission</button></div>
+							</div>
+						</div>
+
+						<div class="float-right" style="margin-top:15px;margin-bottom:15px;">
+							<div class="ui tiny statistic">
+							  <div class="value">
+							    0
+							  </div>
+							  <div class="label">
+							    Not Turned In
+							  </div>
+							</div>
+							<div class="ui tiny statistic">
+							  <div class="value">
+							    2
+							  </div>
+							  <div class="label">
+							    Upgraded
+							  </div>
+							</div>
+							<div class="ui tiny statistic">
+							  <div class="value">
+							    3
+							  </div>
+							  <div class="label">
+							    Graded
+							  </div>
+							</div>
+						</div>
+
+						<table class="ui selectable table">
+						  <thead>
+						    <tr>
+						      <th><input type="checkbox" name="all"></th>
+						      <th>Name</th>
+						      <th>Latest Submission</th>
+						      <th class="right aligned">Grade</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <td><input type="checkbox" name="gradding[]"></td>
+						      <td>John</td>
+						      <td>Jan 23, 2016 @ 9:28 PM</td>
+						      <td class="right aligned">8 / 10</td>
+						    </tr>
+						    <tr>
+						      <td><input type="checkbox" name="gradding[]"></td>
+						      <td>Jamie</td>
+						      <td>Jan 23, 2016 @ 9:28 PM</td>
+						      <td class="right aligned">8 / 10</td>
+						    </tr>
+						  </tbody>
+						</table>
+					</div>
+
+
+					<div class="ui bottom attached tab segment" data-tab="assigment">
+							Assigned to: <a href="#"><span class="kotak-kecil color-group" style="background-color:red;"> </span> c++</a>
+							<hr>
+
+							<div class="detail">
+								ini dia
+							</div>
+
+							<div class="ui segments">
+								<div class="ui segment">
+									<button class="ui teal basic button">Turned In (2)</button>
+									<span class="tanggal">Due Jan 21, 2016</span>
+								</div>
+								<div class="ui segment">
+									<span class="icon-gray">Ini assigmentnya</span>
+								</div>
+							</div>
+
+
+							<div class="ui segments">
+								<div class="ui segment">
+									<div class="ui grid">
+										<div class="three wide column">
+											<i class="icon-gray pointer file text outline huge icon"></i>
+										</div>
+										<div class="thirteen wide column">
+											<a href="#">Ujian online.sql</a> <br>
+											<span class="icon-gray">SQL file</span> <br>
+											<i class="tooltip icon-gray pointer file text outline icon" data-content="Download File" data-variation="tiny inverted"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="ui segments">
+								<div class="ui segment">
+									<div class="ui grid">
+										<div class="four wide column">
+											<a href="#"><img src="/images/default_link.jpg" alt="" class="foto-panjang"></a>
+										</div>
+										<div class="twelve wide column">
+											<a href="#">Google</a> <br>
+											<span class="icon-gray">google.com</span> <br>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="ui segments">
+								  	<div class="ui segment buram">
+								  		<div class="ui grid">
+											<div class="two wide column">
+												<img class="ui foto-kecil image-user" src="/images/default.png" >
+											</div>
+											<div class="fourteen wide column">
+												<div class="komentar-head"><a href="#">Dinda P.</a> said Jan 19, 2016</div>
+												<p class="komentar-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi et commodi voluptatem atque tenetur earum, ea quasi a ducimus ratione reprehenderit est laborum harum corporis, itaque excepturi quae. Pariatur, quas.</p>
+											</div>
+								  		</div>
+								  </div>
+
+								  <div class="ui segment buram">
+								  	<div class="ui equal width grid">
+								  		<div class="column">
+											<div class="ui form">
+											  <div class="inline fields">
+											    <div class="twelve wide field">
+											      <input type="text" placeholder="Middle Name">
+											    </div>
+											    <div class="four wide field">
+											      <div type="button" class="ui button">Kirim</div>
+											    </div>
+											  </div>
+											</div>
+								  		</div>
+								  	</div>
+								  </div>
+
+							</div>
+
+					<!-- akhir assigment -->
+					</div>
+
+				<!-- pemutup segement -->
+	    		</div>
+
+	    		<!-- penutup segments -->
+	    	</div>
+
+	    	<div class="ui segments">
+	    		<div class="ui segment">
+		    		<div class="ui equal width grid">
+
+		    			<div class="column">
+		    					<img src="/images/default.png" alt="" class="foto-sedang image-user"> 
+								<span style="font-size:17px;"><strong>Subhan Dinda</strong></span><br>
+								<span class="icon-gray">Submitted on Jan 23, 2016 @ 9:28 PM</span>  
+								<div class="clear"></div>
+		    			</div>
+
+		    			<div class="column">
+							<div class="ui form float-right">
+							  <div class="fields">
+							    <div class="field">
+							      <input type="number" min="1" max="100" style="width:70px;">
+							    </div>
+							    <span > / </span>
+							    <div class="field">
+							      <input type="number" min="1" max="100" style="width:70px;">
+							    </div>
+							    <div class="field"><button type="button" class="ui teal button">Grade</button></div>
+							  </div>
+							</div>
+							<div class="clear"></div>
+		    			</div>
+
+		    		</div>
+
+	    		</div>
+
+
+				<div class="ui segment">
+
+							<div class="detail">
+								ini dia
+							</div>
+
+							<div class="ui segments">
+								<div class="ui segment">
+									<button class="ui teal basic button">Turned In (2)</button>
+									<span class="tanggal">Due Jan 21, 2016</span>
+								</div>
+								<div class="ui segment">
+									<span class="icon-gray">Ini assigmentnya</span>
+								</div>
+							</div>
+
+
+							<div class="ui segments">
+								<div class="ui segment">
+									<div class="ui grid">
+										<div class="three wide column">
+											<i class="icon-gray pointer file text outline huge icon"></i>
+										</div>
+										<div class="thirteen wide column">
+											<a href="#">Ujian online.sql</a> <br>
+											<span class="icon-gray">SQL file</span> <br>
+											<i class="tooltip icon-gray pointer file text outline icon" data-content="Download File" data-variation="tiny inverted"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="ui segments">
+								<div class="ui segment">
+									<div class="ui grid">
+										<div class="four wide column">
+											<a href="#"><img src="/images/default_link.jpg" alt="" class="foto-panjang"></a>
+										</div>
+										<div class="twelve wide column">
+											<a href="#">Google</a> <br>
+											<span class="icon-gray">google.com</span> <br>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- komentar -->
+							<div class="ui segments">
+								  	<div class="ui segment buram">
+								  		<div class="ui grid">
+											<div class="two wide column">
+												<img class="ui foto-kecil image-user" src="/images/default.png" >
+											</div>
+											<div class="fourteen wide column">
+												<div class="komentar-head"><a href="#">Me </a> an 19, 2016</div>
+												<p class="komentar-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi et commodi voluptatem atque tenetur earum, ea quasi a ducimus ratione reprehenderit est laborum harum corporis, itaque excepturi quae. Pariatur, quas.</p>
+											</div>
+								  		</div>
+								  </div>
+
+								  	<div class="ui segment buram">
+								  		<div class="ui grid">
+											<div class="two wide column">
+												<img class="ui foto-kecil image-user" src="/images/default.png" >
+											</div>
+											<div class="fourteen wide column">
+												<div class="komentar-head"><a href="#">Putra </a> said Jan 19, 2016</div>
+												<p class="komentar-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi et commodi voluptatem atque tenetur earum, ea quasi a ducimus ratione reprehenderit est laborum harum corporis, itaque excepturi quae. Pariatur, quas.</p>
+											</div>
+								  		</div>
+								  </div>
+
+								  <div class="ui segment buram">
+								  	<div class="ui equal width grid">
+								  		<div class="column">
+											<div class="ui form">
+											  <div class="inline fields">
+											    <div class="twelve wide field">
+											      <input type="text" placeholder="Middle Name">
+											    </div>
+											    <div class="four wide field">
+											      <div type="button" class="ui button">Kirim</div>
+											    </div>
+											  </div>
+											</div>
+								  		</div>
+								  	</div>
+								  </div>
+							</div>
+
+				<!-- penutup segment	 -->
+				</div>
+	    		<!-- penutup segments -->
+	    	</div>
+	    </div>
+</template>

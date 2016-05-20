@@ -1,0 +1,25 @@
+<template name="attachFiles">
+<input class="attach-hidden-files" type="file" multiple>
+{{#each listAttachFiles}}
+      <div class="field">
+      <div class="float-left">
+          <i class="large close red link icon" ></i>
+          <i class="large file archive outline icon" ></i>
+          <span>{{original.name}}</span>
+      </div>
+      
+      <div class="float-right">
+        <span>{{#if this.isUploaded}}
+                upload complete
+              {{else}}
+                {{#unless this.isUploaded}}
+                {{> FS.UploadProgressBar class="ui tiny teal progress" semantic=true}}
+                {{/unless}}
+              {{/if}}
+        </span>
+      </div>
+      </div>
+{{/each}}
+
+</template>
+

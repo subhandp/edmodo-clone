@@ -1,0 +1,183 @@
+<template name="post">
+		<div class="ui segments post-segments" >
+			<div class="ui segment">
+				{{#if postBaru createAt}}
+					<a class="ui red ribbon label">New - {{post.type}}</a>
+					<p></p>
+				{{/if}}
+				<div class="ui grid">
+					<div class="two wide column">
+						<img class="ui foto-sedang image-user" src="{{owner.gambar}}" >
+					</div>
+					<div class="fourteen wide column">
+
+						<div class="beranda-head float-left">
+						<a href="#">Me</a> to <a href="#">Putra d.</a>, <a href="#"><span class="color-group" style="background-color:red;"> </span> c++</a>
+
+						</div>
+
+						  <div class="ui floating dropdown icon float-right umum-dropdown">
+						    <i class="angle down icon"></i>
+						    <div class="ui menu">
+							      <div class="item"><a href="#">Delete Post</a></div>
+							      <div class="item"><a href="#">Link to Post</a></div>
+						    </div>
+						  </div>
+
+						  <div class="clear"></div>
+						{{#if jenisPost post.type "note"}}
+							<div class="detail"> {{note.isiNote}} </div>
+
+							{{#each note.links}} {{> link}} {{/each}}
+							{{#each note.attachs}} {{> attach}} {{/each}}
+
+						{{/if}}
+
+						{{#if jenisPost post.type "assigment"}}
+							{{> assigment}}
+
+							{{#each assigment.links}} {{> link}} {{/each}}
+							{{#each assigment.attachs}} {{> attach}} {{/each}}
+						{{/if}}
+
+
+						{{#if jenisPost post.type "poll"}} 
+							{{> poll}}
+						{{/if}}
+
+					</div>
+				</div>
+			</div>
+			{{> komentar}}
+		</div>
+</template>
+
+<template name="poll">
+
+		<div class="detail"> {{poll.pertanyaan}} </div>
+		<div class="ui segment">
+			<div class="ui grid">
+				<div class="sixteen wide column"> 
+				{{poll.setPersentase}}
+				{{#each poll.pilihan}} 
+						<div class="ui tiny teal progress" id="{{_id}}">
+							<div class="label"><strong>{{jawaban}}</strong><span class="icon-gray"> {{persen _id}}%, {{vote}} vote(s)</span></div>
+						  <div class="bar"></div>
+						</div>
+				{{/each}}
+
+				</div>
+			</div>
+		</div>
+		<p>Total Votes ({{poll.totalVote}})</p> 
+
+</template>
+
+
+<template name="assigment">
+		<div class="detail"> <strong>{{assigment.title}}</strong> </div>
+		<div class="ui segments">
+			<div class="ui segment">
+				<button class="ui teal basic button">Turned In ({{assigment.totalSubmit}})</button>
+				<span class="tanggal">Due Jan 21, 2016</span>
+			</div>
+			<div class="ui segment">
+				<span class="icon-gray">{{assigment.deskripsi}}</span>
+			</div>
+		</div>
+</template>
+
+<template name="attach">
+		<div class="ui segments">
+			<div class="ui segment">
+				<div class="ui grid">
+					<div class="three wide column">
+						<i class="icon-gray pointer file text outline huge icon"></i>
+					</div>
+					<div class="thirteen wide column">
+						<a href="#">{{namaFile}}</a> <br>
+						<span class="icon-gray">{{tipeFile}}</span> <br>
+						<a href="#"><i class="tooltip icon-gray pointer file text outline icon" data-content="Download File" data-variation="tiny inverted"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+</template>
+
+
+<template name="link">
+	<div class="ui segments">
+		<div class="ui segment">
+			<div class="ui grid">
+				<div class="four wide column">
+					<a href="{{url}}"><img src="{{gambar}}" alt="" class="foto-panjang"></a>
+				</div>
+				<div class="twelve wide column">
+					<a href="{{url}}">{{nama}}</a> <br>
+					<span class="icon-gray">{{url}}</span> <br>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+
+<template name="komentar">
+		  <div class="ui segment buram">
+		  	<div class="ui grid">
+		  		<div class="two wide column"></div>
+		  		<div class="fourteen wide column">
+
+					<div class="ui horizontal bulleted list">
+					  <a class="item like-post"> Like (2) </a>
+					  <a class="item "> 2 Replies </a>
+					  <a class="item share-post"> Share </a>
+					  <a class="item follow-post"> Following </a>
+					</div>
+					
+					<div class="float-right icon-gray">
+						2 seconds ago
+					</div>
+
+					<div class="clear"></div>
+		  		</div>
+		  	</div>
+		  </div>
+
+		  {{#each comments}}
+	  		  <div class="ui segment buram">
+			  		<div class="ui grid">
+						<div class="two wide column">
+							<img class="ui foto-kecil image-user" src="{{profile _id "foto"}}" >
+						</div>
+						<div class="fourteen wide column">
+							<div class="komentar-head"><a href="#">{{profile _id "nama"}}</a> said Jan 19, 2016</div>
+							<p class="komentar-text">{{body}}</p>
+						</div>
+			  		</div>
+			  </div>
+		  {{/each}}
+
+
+	  		<div class="ui segment buram">
+			  	<div class="ui grid">
+			  		<div class="two wide column">
+			  			<img class="ui foto-kecil image-user" src="/images/default.png" >
+			  		</div>
+			  		<div class="fourteen wide column">
+						<form class="ui form" name="submit-komentar">
+						  <div class="inline fields">
+						    <div class="thirteen wide field">
+						      <input type="text" placeholder="Komentar anda..." name="isi-komentar">
+						    </div>
+						    <div class="three wide field">
+						      <button class="ui button" type="submit">Kirim</button>
+						    </div>
+						  </div>
+						</form>
+			  		</div>
+			  	</div>
+			</div>	
+</template>
+
+

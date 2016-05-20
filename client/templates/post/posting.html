@@ -1,0 +1,154 @@
+<template name="posting">
+	<div class="ui top attached tabular menu">
+	  <a class="item active" data-tab="note" >Note</a>
+	  <a class="item" data-tab="assigment" >Assigment</a>
+	  <a class="item" data-tab="quiz">Quiz</a>
+	  <a class="item" data-tab="poll" >Poll</a>
+	</div>
+
+	<div class="ui bottom attached tab segment active" data-tab="note">
+		<form class="ui form" name="submit-note">
+		  <div class="field">
+		    <input class="buram" type="text" name="isi-note" placeholder="Tulis catatanmu di sini...">
+		  </div>
+		  <div class="field">
+				{{> sendto}}
+		  </div>
+<!-- 		  <div class="field">
+			<div class="float-left">
+				<i class="large close red link icon" ></i>
+			  	<i class="large file outline icon" ></i>
+			  	<span>Ad reiciendis ducimus eius nesciunt accusantium provident saepe consequuntur deserunt quae ullam!</span>
+			</div>
+
+			<div class="float-right">
+				<span>selesai</span>
+			</div>
+		  </div>
+
+		  <div class="field">
+			<div class="float-left">
+				<i class="large close red link icon" ></i>
+			  	<i class="large file image outline icon" ></i>
+			  	<span>Ad reiciendis ducimus eius nesciunt accusantium provident saepe consequuntur deserunt quae ullam!</span>
+			</div>
+
+			<div class="float-right">
+				<span>selesai</span>
+			</div>
+		  </div>
+
+		  <div class="field">
+			<div class="float-left">
+				<i class="large close red link icon" ></i>
+			  	<i class="large file archive outline icon" ></i>
+			  	<span>Ad reiciendis ducimus eius nesciunt accusantium provident saepe consequuntur deserunt quae ullam!</span>
+			</div>
+			
+			<div class="float-right">
+				<span>selesai</span>
+			</div>
+		  </div> -->
+		
+			{{> attachFiles}}
+		  <div class="field">
+			  <div class="float-left">
+					<i class="tooltip icon-gray pointer file text outline large icon attach-now-note" data-content="Attach File" data-variation="tiny inverted"></i>
+		      		<i class="tooltip icon-gray pointer linkify large icon share-link" data-content="Share Links" data-variation="tiny inverted"></i>
+		      		<i class="tooltip icon-gray pointer book large icon" data-content="Tambah dari Library" data-variation="tiny inverted"></i>
+		      		<span class="divide-tab">|</span>
+					<span class="pointer"><i class="icon-gray wait large icon"></i> Kirim Nanti</span>
+			  </div>
+			  <div class="float-right">
+			  	<a href="#" class="">Cancel</a> or
+		      	<button class="ui teal button" type="submit">Kirim</button>	
+			  </div>
+			  <div class="clear"></div>		   
+		  </div>
+		</form>
+	</div>
+
+	<div class="ui bottom attached tab segment" data-tab="assigment">
+		<form class="ui form" name="submit-assigment">
+		  <div class="field">
+		    <input class="buram" type="text" name="title-assigment" placeholder="Assigment title">
+		  </div>
+		 <div class="field">
+			<div class="ui right labeled input">
+			<div class="ui label"><i class="calendar icon"></i></div>
+			  <input class="datepicker" name="date-assigment" type="text">
+			</div>
+		 </div>
+
+		 <div class="field">
+		 	<input class="buram" type="checkbox" name="lock-assigment"> Kunci assigment setelah batas akhir tanggal
+		 </div>
+
+		  <div class="field">
+		    <input class="buram" type="text" name="deskripsi-assigment" placeholder="Deskripsi assigment...">
+		  </div>
+
+		  <div class="field">
+				{{> sendto}}
+		  </div>
+
+		  <div class="field">
+			  <div class="float-left">
+					<i class="tooltip icon-gray pointer file text outline large icon" data-content="Share Links" data-variation="tiny inverted"></i>
+		      		<i class="tooltip icon-gray pointer linkify large icon" data-content="Attach File" data-variation="tiny inverted"></i>
+		      		<i class="tooltip icon-gray pointer book large icon" data-content="Tambah dari Library" data-variation="tiny inverted"></i>
+		      		<span class="divide-tab">|</span>
+					<span class="pointer"><i class="icon-gray wait large icon"></i> Kirim Nanti</span>
+			  </div>
+			  <div class="float-right">
+			  	<a href="#" class="">Cancel</a> or
+		      	<button class="ui teal button" type="submit" name="submitAssigment">Kirim</button>
+			  </div>
+			  <div class="clear"></div>		   
+		  </div>
+		</form>
+	</div>
+
+
+	<div class="ui bottom attached tab segment" data-tab="quiz">
+		<button class="ui teal button" type="button">Kirim</button> or <a href="#">Load From Collection</a>
+	</div>
+
+
+	<div class="ui bottom attached tab segment" data-tab="poll">
+		<form class="ui form" name="submit-poll">
+		  <div class="field">
+		    <input class="buram" type="text" name="pertanyaan-poll" placeholder="Pertanyaan...">
+		  </div>
+
+		 <div class="field">
+	    	<div class="ui segments">
+			  <div class="ui segment buram daftar-pilihan">
+						<div class="field"><input  type="text" class="jawaban-poll" name="jawaban-poll1" placeholder="Answer #1"> </div>
+						<div class="field"><input  type="text" class="jawaban-poll" name="jawaban-poll2" placeholder="Answer #2"> </div>
+						<div class="field"><button type="button" class="float-right ui teal basic button tambah-poll" >Tambah Pertanyaan</button></div>
+					<div class="clear"></div>
+			  </div>
+			</div>
+		 </div>
+
+
+		  <div class="field">
+				{{> sendto}}
+		  </div>
+
+		  <div class="field">
+			  <div class="float-left pointer ">
+					<i class="icon-gray wait large icon"></i> Kirim Nanti
+			  </div>
+			  <div class="float-right">
+			  	<a href="#" class="">Cancel</a> or
+		      	<button class="ui teal button" type="submit" name="submitPoll">Kirim</button>	
+			  </div>
+			  <div class="clear"></div>		   
+		  </div>
+		</form>
+	</div>
+
+
+</template>

@@ -1,0 +1,15 @@
+<template name="sendto">
+		<div class="ui buram fluid multiple search normal selection floating dropdown dropdown-sendto">
+             <input type="hidden" name="userForSend">
+             <i class="search icon" style="margin-top:0.1px!important;"></i>
+                 <div class="default text">Kirim ke...</div>
+                    <div class="menu">
+                    	{{#each getUsers}}
+                    		<div class="item" data-value="{{_id}}/{{profile.nama}}/user"><span class="kotak-search" style="background-image: url({{profile.foto}});background-size: 100%;"></span>{{profile.nama}}</div>
+                    	{{/each}}
+						{{#each getGroups}}
+							<div class="item" data-value="{{_id}}/{{nama}}/group"><span class="kotak-search" style="background-color:red"></span>{{nama}}</div>
+						{{/each}}
+                   </div>
+		 </div>
+</template>

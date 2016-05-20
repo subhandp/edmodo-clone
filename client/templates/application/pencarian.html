@@ -1,0 +1,60 @@
+<template name="pencarian">
+
+
+  <div class="ui icon input">
+    {{> EasySearch.Input indexes=searchIndexes attributes=inputAttributes }}
+    <i class="search icon"></i>
+      <div class="ui popup isi-pencarian" >
+    <div class="bungkus-notif">
+      <div class="ui grid">
+
+        <div class="row">
+          <div class="ui sixteen wide column">
+            <div>
+              <img class="ui foto-sedang image-user" src="/images/default.png" >
+              <span><a href="#">Assigment judul</a> submission oleh <a href="#">Subhan dinda putra</a></span><br>
+              <span class="icon-gray">2 menit yang lalu</span>
+
+              {{#EasySearch.IfNoResults indexes=searchIndexes logic="AND" }}
+                <div>No search results found</div>
+              {{/EasySearch.IfNoResults}}
+
+              {{#EasySearch.IfSearching indexes=searchIndexes logic="OR" }}
+                <div>Indexes are searching...</div>
+              {{/EasySearch.IfSearching}}
+
+                {{#EasySearch.Each index=usersIndex}}
+                <option value="{{profile._id}}">{{profile.nama}}</option>
+              {{/EasySearch.Each}}
+
+              {{#EasySearch.Each index=groupsIndex }}
+                 <option value="{{_id}}">{{nama}}</option>
+              {{/EasySearch.Each}}
+
+              {{#EasySearch.Each index=notesIndex }}
+                 <option value="{{_id}}">{{isiNote}}</option>
+              {{/EasySearch.Each}}
+
+                {{#EasySearch.Each index=assigmentsIndex }}
+                 <option value="{{_id}}">{{title}}</option>
+              {{/EasySearch.Each}}
+
+                {{#EasySearch.Each index=pollsIndex }}
+                 <option value="{{_id}}">{{pertanyaan}}</option>
+              {{/EasySearch.Each}}
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+    </div>
+  </div>
+  </div>
+
+
+
+
+</template>
+
