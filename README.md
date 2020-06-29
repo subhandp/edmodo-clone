@@ -1,2 +1,2 @@
 # edmodo-clone
-edmodo another version
+edmodo another version using Meteor JS
